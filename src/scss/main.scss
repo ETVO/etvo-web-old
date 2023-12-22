@@ -1,0 +1,135 @@
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+
+@import "./blocks/hero.scss";
+@import "./blocks/services.scss";
+@import "./blocks/money.scss";
+@import "./blocks/contact.scss";
+@import "./blocks/portfolio.scss";
+@import "./blocks/project-modal.scss";
+@import "./blocks/about-etvo-manage.scss";
+
+html {
+    scroll-behavior: smooth;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+body {
+    width: 100vw !important;
+    overflow-x: hidden !important;
+    overflow-y: visible;
+    background-color: white;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+}
+
+*::selection {
+    background-color: mix(white, #ed2647, 20%);
+    color: white;
+}
+
+form {
+    label {
+        cursor: pointer;
+    }
+}
+
+.btn {
+    font-family: "Lora";
+    border-radius: 0;
+}
+
+$primary_color: var(--bs-primary);
+
+.btn-primary {
+    color: white;
+
+    &:hover {
+        color: white;
+    }
+
+    &:active {
+    }
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -200px;
+    visibility: hidden;
+}
+
+.pre-title {
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    opacity: 0.75;
+}
+
+.error {
+    background-color: #fafafa;
+    .title {
+        font-size: 7rem;
+    }
+
+    .subtitle {
+        font-weight: 300;
+        font-size: 1.5rem;
+        letter-spacing: 0.4px;
+    }
+
+    p {
+        margin: 1rem 0 1.5rem;
+        letter-spacing: 0.4px;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+.action-block {
+    .caption {
+        margin-bottom: 0.5rem;
+
+        font-style: italic;
+        font-family: "Lora", sans-serif;
+        font-weight: 400;
+    }
+}
+
+.social {
+    a {
+        display: inline-block;
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+        font-size: 1rem;
+        color: white;
+        transition: color 0.1s;
+
+        &:hover {
+            color: mix(white, #ed2647, 30%);
+        }
+    }
+}
