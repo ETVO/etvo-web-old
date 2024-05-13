@@ -6,6 +6,7 @@ $('.project').on('click', function () {
   var dir = $(this).data('project-dir');
   var year = $(this).data('project-year');
 
+
   $.ajax({
     url: UTIL_API_URL,
     data: {
@@ -42,6 +43,16 @@ $('.project').on('click', function () {
       $(modal).find('.images').html(images.join(' '));
 
       $(modal).fadeIn(200);
+
+
+      // Close modal when the ESC key is pressed
+      $(document).on('keydown', function (e) {
+        if (e.keyCode === 27) {
+          closeModal();
+
+          $(document).off('keydown')
+        }
+      });
     }
   });
 
@@ -53,7 +64,7 @@ function treatText(text) {
     paragraphs[i] = '<p>' + paragraphs[i] + '</p>';
   }
   text = paragraphs.join('');
-  
+
   text = text.replace(/\r\n/g, '<br>');
 
   var $html = $('<div>').html(text);
@@ -80,10 +91,3 @@ $('#projectModal').on('click', function (e) {
 
 // Close modal when clicking on elements with class 'action' inside the modal
 $('#projectModal .action').on('click', closeModal);
-
-// Close modal when the ESC key is pressed
-$(document).on('keydown', function (e) {
-  if (e.keyCode === 27) {
-    closeModal();
-  }
-});

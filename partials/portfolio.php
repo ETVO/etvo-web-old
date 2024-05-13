@@ -96,7 +96,7 @@ $portfolio = $blocks['portfolio'];
     </div>
     <div class="content">
         <div class="container-fluid">
-            <img class="art" src="/assets/img/web-net.svg" alt="">
+            <img class="art" src="/<?= HOME_DIR; ?>assets/img/web-net.svg" alt="">
             <h2 class="title"></h2>
             <div class="attr">
                 <span class="year"></span>

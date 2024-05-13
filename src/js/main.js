@@ -1,5 +1,4 @@
 import 'bootstrap';
-import 'fslightbox';
 import './contact.js';
 import './projects.js';
 
